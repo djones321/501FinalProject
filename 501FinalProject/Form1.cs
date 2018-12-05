@@ -21,5 +21,10 @@ namespace _501FinalProject
         {
 
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
