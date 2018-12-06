@@ -8,5 +8,9 @@ namespace _501FinalProject
 {
     class Time
     {
+        public static bool compare(string l, string k)
+        {
+            return (l.Equals(k));
+        }
     }
 }

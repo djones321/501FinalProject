@@ -43,7 +43,7 @@ namespace _501FinalProject
             {
                 TextKSIS.Text = openFileDialog1.FileName;
 
-                //TextOutput.Text = Controller.Verify(openFileDialog1.FileName);
+                TextOutput.Text = Controller.Verify(openFileDialog1.FileName);
                 //will return and print the compared files
             }
         }

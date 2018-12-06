@@ -13,6 +13,7 @@ namespace _501FinalProject
         public override string[] Semester(string section)
         {
             this.t[0] = ',';
+            if(section == null) return null;
             this.csvs = section.Split(t);
 
             return this.csvs;

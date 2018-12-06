@@ -10,9 +10,9 @@ namespace _501FinalProject
     {
         public abstract string[] Semester(string section);
 
-        public string[] csvs;
+        public string[] csvs = new string[25];
 
-        public char[] t;
+        public char[] t = new char[1];
         
     }
 }
