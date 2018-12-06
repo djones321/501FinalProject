@@ -39,10 +39,8 @@ namespace _501FinalProject
                 sb.Append(Environment.NewLine);
                 sb.Append(Environment.NewLine);
             }
-
-            //MessageBox.Show(localStrings[0]);
-    
             return sb.ToString();
+            
         }
         
 
@@ -64,13 +62,21 @@ namespace _501FinalProject
             sr.Close();
 
             StringBuilder errorList = new StringBuilder();
-            string result;
+            string result = "";
             for(i = 0; i < localStrings.Length; i++)
             {
-                result = Section.Sections(localSemester.Semester(localStrings[i]),
-                    ksisSemester.Semester(KSISStrings[i]));
-                errorList.Append(result);
-                if (result != "") errorList.Append(Environment.NewLine);
+                for (int j = 0; j < localStrings.Length; j++)
+                {
+                    result = Section.Sections(localSemester.Semester(localStrings[i]),
+                        ksisSemester.Semester(KSISStrings[j]));
+                    if (result == "") break;
+                }
+
+                if (result != "")
+                {
+                    errorList.Append(result);
+                    errorList.Append(Environment.NewLine);
+                }
             }
             
 
