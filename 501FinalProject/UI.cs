@@ -18,7 +18,6 @@ namespace _501FinalProject
         public UI()
         {
             InitializeComponent();
-            TextOutput.Enabled = false;
         }
         
         private void Form1_Load(object sender, EventArgs e)
@@ -39,7 +38,8 @@ namespace _501FinalProject
 
         private void verifyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (TextLocal.Text == "") MessageBox.Show("Load a local file first!");
+            else if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 filename = openFileDialog1.FileName;
                 TextKSIS.Text = filename;
@@ -50,7 +50,8 @@ namespace _501FinalProject
 
         private void buttonReload_Click(object sender, EventArgs e)
         {
-            if (TextKSIS.Text != "" && TextLocal.Text != "")
+            if (TextLocal.Text == "") MessageBox.Show("Load a local file first!");
+            else if (TextKSIS.Text != "" && TextLocal.Text != "")
             {
                 TextOutput.Text = Controller.Reload(filename);
             }
@@ -59,6 +60,7 @@ namespace _501FinalProject
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
+
             TextKSIS.Text = "";
             TextLocal.Text = "";
             TextOutput.Text = "";

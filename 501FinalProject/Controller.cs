@@ -13,8 +13,8 @@ namespace _501FinalProject
     {
         static abstractSemester localSemester = new localSemestser();
         static abstractSemester ksisSemester = new SISSemester();
-        static string[] localStrings = new string[99];
-        private static string[] KSISStrings = new string[99];
+        static string[] localStrings = new string[999];
+        private static string[] KSISStrings = new string[999];
 
         public static string Load(string filePath)
         {
