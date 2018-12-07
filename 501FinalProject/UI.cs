@@ -18,6 +18,7 @@ namespace _501FinalProject
         public UI()
         {
             InitializeComponent();
+            TextOutput.Enabled = false;
         }
         
         private void Form1_Load(object sender, EventArgs e)
@@ -32,8 +33,6 @@ namespace _501FinalProject
             {
                 TextLocal.Text = openFileDialog1.FileName;
                 TextOutput.Text = Controller.Load(openFileDialog1.FileName);
-
-                //TextOutput.Text = sb.ToString();
             }
         }
         public string filename;
@@ -46,13 +45,16 @@ namespace _501FinalProject
                 TextKSIS.Text = filename;
 
                 TextOutput.Text = Controller.Verify(filename);
-                //will return and print the compared files
             }
         }
 
         private void buttonReload_Click(object sender, EventArgs e)
         {
-            TextOutput.Text = Controller.Reload(filename);
+            if (TextKSIS.Text != "" && TextLocal.Text != "")
+            {
+                TextOutput.Text = Controller.Reload(filename);
+            }
+            else MessageBox.Show("Load the 2 files to be compared first!");
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
