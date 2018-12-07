@@ -63,12 +63,18 @@ namespace _501FinalProject
 
             StringBuilder errorList = new StringBuilder();
             string result = "";
+            string tresult = "";
+            bool trigger = false;
+            int n = 0;
             for(i = 0; i < localStrings.Length; i++)
             {
-                for (int j = 0; j < localStrings.Length; j++)
+                if(localStrings[i] == null) continue;
+                for (int j = 0; j < KSISStrings.Length; j++)
                 {
+                    if (KSISStrings[j] == null) continue;
                     result = Section.Sections(localSemester.Semester(localStrings[i]),
                         ksisSemester.Semester(KSISStrings[j]));
+                    
                     if (result == "") break;
                 }
 
