@@ -61,5 +61,10 @@ namespace _501FinalProject
             TextLocal.Text = "";
             TextOutput.Text = "";
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("SVT Version: 1.0.0 \nDate: 12/7/18 \nDamon Jones and Charles Tryban");
+        }
     }
 }

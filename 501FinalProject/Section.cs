@@ -14,7 +14,20 @@ namespace _501FinalProject
             int count = 0;
             bool sameCourse = false;
             int i;
-            
+
+            if (localCSV == null && ksisCSV == null)
+            {
+                return "";
+            }
+
+            if (localCSV == null)
+                return ("Section " + ksisCSV[0] + " " + ksisCSV[1] + " Section " + ksisCSV[3] +
+                        " is new this semester");
+            if (ksisCSV == null)
+                return ("Section " + localCSV[0] + " " + localCSV[1] + " Section " + localCSV[3] + " cannot be found");
+
+
+
                 for (i = 0; i < 4; i++)
                 {
                     sameCourse = getCourse(localCSV[i], ksisCSV[i]);
@@ -41,15 +54,15 @@ namespace _501FinalProject
 
 
 
-                if (count == 0 && sameCourse) return "fine";
+                if (count == 0 && sameCourse) return "";
                 else if (sameCourse && count > 0)
                 {
-                    return ("Section " + ksisCSV[0] + " " + ksisCSV[1] + " Section" + ksisCSV[3] +
+                    return ("Section " + ksisCSV[0] + " " + ksisCSV[1] + " Section " + ksisCSV[3] +
                             " has been changed in the current semester");
                 }
                 else
                 {
-                    return ("Section " + ksisCSV[0] + " " + ksisCSV[1] + " Section" + ksisCSV[3] +
+                    return ("Section " + ksisCSV[0] + " " + ksisCSV[1] + " Section " + ksisCSV[3] +
                             " is new this semester");
                 }
         
